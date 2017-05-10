@@ -36,10 +36,6 @@ ENV SSL_NO_VALIDATE=False
 ENV TIMEOUT=30
 ENV MASTER_ONLY=False
 
-RUN envsubst < /curator.yml.tmpl > /curator.yml
-RUN envsubst < /delete.yml.tmpl > /delete.yml
-RUN envsubst < /snapshot.yml.tmpl > /snapshot.yml
-
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["curator"]

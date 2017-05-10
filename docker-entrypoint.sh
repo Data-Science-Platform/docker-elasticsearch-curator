@@ -2,6 +2,10 @@
 
 set -ex
 
+envsubst < /curator.yml.tmpl > /curator.yml
+envsubst < /delete.yml.tmpl > /delete.yml
+envsubst < /snapshot.yml.tmpl > /snapshot.yml
+
 # Add curator as command if needed
 if [ "${1:0:1}" = '-' ]; then
 	set -- curator "$@"
