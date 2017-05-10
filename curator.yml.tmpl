@@ -1,0 +1,19 @@
+---
+client:
+  hosts: $ELASTICSEARCH_HOST
+  port: $ELASTICSEARCH_PORT
+  url_prefix:
+  use_ssl: $USE_SSL
+  certificate: $CERTIFICATE
+  client_cert: $CLIENT_CERT
+  client_key: $CLIENT_KEY
+  ssl_no_validate: $SSL_NO_VALIDATE
+  http_auth: $HTTP_AUTH
+  timeout: $TIMEOUT
+  master_only: $MASTER_ONLY
+
+logging:
+  loglevel: INFO
+  logfile:
+  logformat: default
+  blacklist: ['elasticsearch', 'urllib3']

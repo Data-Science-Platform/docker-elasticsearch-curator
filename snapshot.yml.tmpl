@@ -1,0 +1,13 @@
+actions:
+  1:
+    action: snapshot
+    options:
+      repository: $SNAPSHOT_REPOSITORY
+      wait_for_completion: True
+    filters:
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: $SNAPSHOT_OLDER_THAN_IN_DAYS
+      timestring: '%Y.%m.%d'
