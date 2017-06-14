@@ -11,3 +11,6 @@ actions:
       unit: days
       unit_count: $SNAPSHOT_OLDER_THAN_IN_DAYS
       timestring: '%Y.%m.%d'
+    - filtertype: pattern
+      kind: regex
+      value: '$SNAPSHOT_INDEX_PATTERN'
