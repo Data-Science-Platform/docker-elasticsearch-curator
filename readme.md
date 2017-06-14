@@ -12,3 +12,5 @@ where **es1** is the name of the elasticsearch container and
 * **DELETE\_OLDER\_THAN\_IN\_DAYS**: Indicates all logs with a date exceeding this age can be deleted.
 * **SNAPSHOT\_OLDER\_THAN\_IN\_DAYS**: Indicates all logs with a date exceeding this age can be snapshotted.
 * **SNAPSHOT\_REPOSITORY**: The repository for the logs to be snapshotted.
+* **SNAPSHOT_INDEX_PATTERN**: Snapshots only indexes matching the pattern.
+* **DELETE_INDEX_PATTERN**: Deletes only indexes matching the pattern.
