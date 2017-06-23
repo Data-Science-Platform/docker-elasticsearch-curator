@@ -3,7 +3,7 @@ actions:
     action: delete_indices
     filters:
     - filtertype: age
-      source: creation_date
+      source: name
       direction: older
       unit: days
       unit_count: $DELETE_OLDER_THAN_IN_DAYS
