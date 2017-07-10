@@ -15,7 +15,7 @@ RUN groupadd -r curator && useradd -r -g curator curator
 
 RUN apt-get update && apt-get install -y gettext-base
 
-RUN pip install elasticsearch-curator==5.0.2
+RUN pip install elasticsearch-curator==5.1.1
 
 COPY docker-entrypoint.sh /
 COPY script.sh /
