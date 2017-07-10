@@ -21,9 +21,19 @@ COPY docker-entrypoint.sh /
 COPY script.sh /
 RUN chmod +x /script.sh
 
+COPY curator.yml.tmpl /
 COPY snapshot.yml.tmpl /
 COPY delete.yml.tmpl /
 
+ENV SSL_NO_VALIDATE False
+ENV USE_SSL True
+ENV TIMEOUT 30
+ENV MASTER_ONLY False
+ENV LOG_LEVEL INFO
+ENV LOG_FORMAT default
+ENV BLACK_LIST ['elasticsearch', 'urllib3']
+ENV ELASTICSEARCH_HOSTS 127.0.0.1
+ENV ELASTICSEARCH_PORT 9200
 
 ENV INTERVAL_IN_HOURS=24
 ENV DELETE_OLDER_THAN_IN_DAYS=20

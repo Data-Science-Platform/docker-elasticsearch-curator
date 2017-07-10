@@ -2,6 +2,7 @@
 
 set -ex
 
+envsubst < /curator.yml.tmpl > /curator.yml
 envsubst < /delete.yml.tmpl > /delete.yml
 envsubst < /snapshot.yml.tmpl > /snapshot.yml
 
