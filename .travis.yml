@@ -1,0 +1,16 @@
+language: bash
+sudo: required
+services:
+  - docker
+
+script:
+  - export REPO=gerrrr/elasticsearch-curator
+  - export NICE_BRANCH_NAME=$(echo $TRAVIS_BRANCH | sed -e 's/\//_/g')
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo "$NICE_BRANCH_NAME" ; fi`
+  - export COMMIT=${TRAVIS_COMMIT::8}
+  - docker build -t $REPO:$COMMIT .
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO
