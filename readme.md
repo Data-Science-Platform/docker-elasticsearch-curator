@@ -3,9 +3,11 @@
 [![Build Status](https://travis-ci.org/Gerrrr/docker-elasticsearch-curator.svg?branch=master)](https://travis-ci.org/Gerrrr/docker-elasticsearch-curator)
 [![Docker Pulls](https://img.shields.io/docker/pulls/gerrrr/elasticsearch-curator.svg?maxAge=2592000)](https://hub.docker.com/r/gerrrr/elasticsearch-curator/)
 
+## Description
+
 The purpose of this image is to periodically clean the Elasticsearch indexes leaving only a configurable amount of days worth of logging in the system.
 
-It can be run as follows:
+## Usage
 
 ```
 docker run -d \
